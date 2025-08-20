@@ -112,7 +112,7 @@ import User from "./userComp";
 
 
 
-function App() {
+function App(params) {
  const [Display, setDisplay] = useState(true) 
 return(
 <div>
