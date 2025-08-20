@@ -12,6 +12,7 @@ function Counter(params) {
         <h1>{Rcounter}</h1>
         <button onClick={Counting}>icrease one</button>
         <button onClick={()=>setRcounter(Rcounter-1)}> decreasa by 1</button>
+        <div></div>
 </div>
     )
 }
