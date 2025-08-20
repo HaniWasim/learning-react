@@ -112,19 +112,39 @@ import User from "./userComp";
 
 
 
-function App(params) {
- const [Display, setDisplay] = useState(true) 
-return(
-<div>
-  <button onClick={()=>setDisplay(!Display)} >toggle</button>
-{/* {
-  Display? <h1>its true </h1>: null
-}  */}
+// function App(params) {
+//  const [Display, setDisplay] = useState(true) 
+// return(
+// <div>
+//   <button onClick={()=>setDisplay(!Display)} >toggle</button>
+// {/* {
+//   Display? <h1>its true </h1>: null
+// }  */}
 
-{
-  Display? <User/>: null
-} 
-</div>
-)
+// {
+//   Display? <User/>: null
+// } 
+// </div>
+// )
+// }
+//  export default App;
+
+
+
+function App(params) {
+ const [Number, setNumber] = useState(0) 
+ return(
+  <div>
+    <h1>{Number}</h1>
+    <button onClick={()=>setNumber(Number+1)}>Counter</button>
+    {
+      Number==0?<h1>Counter is 0 </h1>
+      :Number==1?<h1>Counter is 1 </h1>
+      :Number==2?<h1>Counter is 2 </h1>
+      :Number==3?<h1>Counter is 3 </h1>
+      :Number>=4?<h1>Counter is greater than 3 </h1>:null
+    }
+  </div>
+ )
 }
- export default App;
+export default App;
