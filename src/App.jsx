@@ -170,23 +170,79 @@ import Wrap from "./wrapper";
 //   )
 // }
 // export default StdName;
-function App(params) {
-  return (
+
+
+// function App(params) {
+//   return (
+//     <div>
+
+//     <Wrap color="pink">
+//       <h3>Learning wrapping</h3>
+
+//     </Wrap>
+//         <Wrap>
+//       <h3>Learning wrapping</h3>
+      
+//     </Wrap>
+//         <Wrap>
+//       <h3>Learning wrapping</h3>
+      
+//     </Wrap>
+//     </div>
+//   );
+// }
+// export default App;
+
+
+
+function InputFunct(params) {
+
+  const [val, setval] = useState("")
+
+  const [value, setvalue] = useState("")
+
+  const [values, setvalues] = useState("")
+
+
+
+  return( 
+    <>
     <div>
 
-    <Wrap color="pink">
-      <h3>Learning wrapping</h3>
-
-    </Wrap>
-        <Wrap>
-      <h3>Learning wrapping</h3>
-      
-    </Wrap>
-        <Wrap>
-      <h3>Learning wrapping</h3>
-      
-    </Wrap>
+    <h2>Learning input feild</h2>
+    <input value={val} onChange={(event)=>{setval(event.target.value)}} placeholder="enter ur text" type="text"  />
+<h1>{val}</h1>
+<button onClick={()=>{setval("")}}>clear ur text</button>
     </div>
-  );
+
+
+  <div>
+
+    <h2>Learning input feild</h2>
+    <input value={value} onChange={(event)=>{setvalue(event.target.value)}} placeholder="enter ur text" type="text"  />
+<h1>{value}</h1>
+<button onClick={()=>{setvalue("")}}>clear ur text</button>
+    </div>
+
+      <div>
+
+    <h2>Learning input feild</h2>
+    <input value={values} onChange={(event)=>{setvalues(event.target.value)}} placeholder="enter ur text" type="text"  />
+<h1>{values}</h1>
+<button onClick={()=>{setvalues("")}}>clear ur text</button>
+
+<br />
+
+{/* 
+Use console.log(variable) → logs only the value.
+
+Use console.log({variable}) → logs an object with the variable name as the key. */}
+
+
+<button onClick={()=>{console.log(val,value,values)}}> showing on console </button>
+
+    </div>
+    </>
+  )
 }
-export default App;
+export default InputFunct;
