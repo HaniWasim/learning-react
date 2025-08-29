@@ -195,13 +195,67 @@ import Wrap from "./wrapper";
 
 
 
+// function InputFunct(params) {
+
+//   const [val, setval] = useState("")
+
+//   const [value, setvalue] = useState("")
+
+//   const [values, setvalues] = useState("")
+
+
+
+//   return( 
+//     <>
+//     <div>
+
+//     <h2>Learning input feild</h2>
+//     <input value={val} onChange={(event)=>{setval(event.target.value)}} placeholder="enter ur text" type="text"  />
+// <h1>{val}</h1>
+// <button onClick={()=>{setval("")}}>clear ur text</button>
+//     </div>
+
+
+//   <div>
+
+//     <h2>Learning input feild</h2>
+//     <input value={value} onChange={(event)=>{setvalue(event.target.value)}} placeholder="enter ur text" type="text"  />
+// <h1>{value}</h1>
+// <button onClick={()=>{setvalue("")}}>clear ur text</button>
+//     </div>
+
+//       <div>
+
+//     <h2>Learning input feild</h2>
+//     <input value={values} onChange={(event)=>{setvalues(event.target.value)}} placeholder="enter ur text" type="text"  />
+// <h1>{values}</h1>
+// <button onClick={()=>{setvalues("")}}>clear ur text</button>
+
+// <br />
+
+// {/* 
+// Use console.log(variable) → logs only the value.
+
+// Use console.log({variable}) → logs an object with the variable name as the key. */}
+
+
+// <button onClick={()=>{console.log(val,value,values)}}> showing on console </button>
+
+//     </div>
+//     </>
+//   )
+// }
+// export default InputFunct;
+
+
+
 function InputFunct(params) {
 
   const [val, setval] = useState("")
 
-  const [value, setvalue] = useState("")
+  const [password, setpassward] = useState("")
 
-  const [values, setvalues] = useState("")
+  const [Email, setEmail] = useState("")
 
 
 
@@ -212,34 +266,31 @@ function InputFunct(params) {
     <h2>Learning input feild</h2>
     <input value={val} onChange={(event)=>{setval(event.target.value)}} placeholder="enter ur text" type="text"  />
 <h1>{val}</h1>
-<button onClick={()=>{setval("")}}>clear ur text</button>
+{/* <button onClick={()=>{setval("")}}>clear ur text</button> */}
     </div>
 
 
   <div>
 
     <h2>Learning input feild</h2>
-    <input value={value} onChange={(event)=>{setvalue(event.target.value)}} placeholder="enter ur text" type="text"  />
-<h1>{value}</h1>
-<button onClick={()=>{setvalue("")}}>clear ur text</button>
+    <input value={password} onChange={(event)=>{setpassward(event.target.value)}} placeholder="enter ur password" type="password"  />
+<h1>{password}</h1>
+{/* <button onClick={()=>{setpassward("")}}>clear ur text</button> */}
     </div>
 
       <div>
 
     <h2>Learning input feild</h2>
-    <input value={values} onChange={(event)=>{setvalues(event.target.value)}} placeholder="enter ur text" type="text"  />
-<h1>{values}</h1>
-<button onClick={()=>{setvalues("")}}>clear ur text</button>
+    <input value={Email} onChange={(event)=>{setEmail(event.target.value)}} placeholder="enter ur mail" type="text"  />
+<h1>{Email}</h1>
+{/* <button onClick={()=>{setEmail("")}}>clear ur text</button> */}
 
 <br />
 
-{/* 
-Use console.log(variable) → logs only the value.
-
-Use console.log({variable}) → logs an object with the variable name as the key. */}
+<button onClick={()=>{setval("");setpassward("");setEmail("")}}> Clear </button>
 
 
-<button onClick={()=>{console.log(val,value,values)}}> showing on console </button>
+{/* <button onClick={()=>{console.log(val,password,Email)}}> showing on console </button> */}
 
     </div>
     </>
