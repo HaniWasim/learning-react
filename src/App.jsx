@@ -4,6 +4,7 @@ import UserProps from "./prop";
 // import College from "./college";
 import Students from "./college";
 import Wrap from "./wrapper";
+import Skills from "./skills";
 
 // import Counter from "./counter";
 
@@ -249,51 +250,10 @@ import Wrap from "./wrapper";
 
 
 
-function InputFunct(params) {
-
-  const [val, setval] = useState("")
-
-  const [password, setpassward] = useState("")
-
-  const [Email, setEmail] = useState("")
-
-
-
-  return( 
-    <>
-    <div>
-
-    <h2>Learning input feild</h2>
-    <input value={val} onChange={(event)=>{setval(event.target.value)}} placeholder="enter ur text" type="text"  />
-<h1>{val}</h1>
-{/* <button onClick={()=>{setval("")}}>clear ur text</button> */}
-    </div>
-
-
-  <div>
-
-    <h2>Learning input feild</h2>
-    <input value={password} onChange={(event)=>{setpassward(event.target.value)}} placeholder="enter ur password" type="password"  />
-<h1>{password}</h1>
-{/* <button onClick={()=>{setpassward("")}}>clear ur text</button> */}
-    </div>
-
-      <div>
-
-    <h2>Learning input feild</h2>
-    <input value={Email} onChange={(event)=>{setEmail(event.target.value)}} placeholder="enter ur mail" type="text"  />
-<h1>{Email}</h1>
-{/* <button onClick={()=>{setEmail("")}}>clear ur text</button> */}
-
-<br />
-
-<button onClick={()=>{setval("");setpassward("");setEmail("")}}> Clear </button>
-
-
-{/* <button onClick={()=>{console.log(val,password,Email)}}> showing on console </button> */}
-
-    </div>
-    </>
+function App(params) {
+  return(
+    <Skills/>
   )
 }
-export default InputFunct;
+export default App;
+ 
