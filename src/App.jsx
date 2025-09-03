@@ -4,7 +4,10 @@ import UserProps from "./prop";
 // import College from "./college";
 import Students from "./college";
 import Wrap from "./wrapper";
-import Skills from "./skills";
+// import Skills from "./skills";
+import Radiobox from "./skills";
+import Tableloop from "./skills";
+import Clock from "./Clock";
 
 // import Counter from "./counter";
 
@@ -250,10 +253,41 @@ import Skills from "./skills";
 
 
 
+// function App(params) {
+//   return(
+//     <Skills/>
+//   )
+// }
+// export default App;
+ 
+
+// function App(params) {
+//   return(
+//     <Radiobox/>
+//   )
+// }
+// export default App;
+
+
+// function App(params) {
+//   return(
+//     <Tableloop/>
+//   )
+// }
+// export default App;
+
 function App(params) {
+  const [Color, setColor] = useState("pink")
   return(
-    <Skills/>
+    <>
+    <select onChange={(e)=>{setColor(e.target.value)}} >
+      <option value="orange">orange</option>
+      <option value="red">red</option>
+      <option value="green">green</option>
+      <option value="pink">pink</option>
+    </select>
+    <Clock color={Color}/>
+    </>
   )
 }
 export default App;
- 
