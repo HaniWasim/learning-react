@@ -8,6 +8,9 @@ import Wrap from "./wrapper";
 import Radiobox from "./skills";
 import Tableloop from "./skills";
 import Clock from "./Clock";
+import ColNames from "./CollegeNmaes";
+// import ColStd from "./collegecand";
+
 
 // import Counter from "./counter";
 
@@ -175,7 +178,6 @@ import Clock from "./Clock";
 // }
 // export default StdName;
 
-
 // function App(params) {
 //   return (
 //     <div>
@@ -186,18 +188,16 @@ import Clock from "./Clock";
 //     </Wrap>
 //         <Wrap>
 //       <h3>Learning wrapping</h3>
-      
+
 //     </Wrap>
 //         <Wrap>
 //       <h3>Learning wrapping</h3>
-      
+
 //     </Wrap>
 //     </div>
 //   );
 // }
 // export default App;
-
-
 
 // function InputFunct(params) {
 
@@ -207,9 +207,7 @@ import Clock from "./Clock";
 
 //   const [values, setvalues] = useState("")
 
-
-
-//   return( 
+//   return(
 //     <>
 //     <div>
 
@@ -218,7 +216,6 @@ import Clock from "./Clock";
 // <h1>{val}</h1>
 // <button onClick={()=>{setval("")}}>clear ur text</button>
 //     </div>
-
 
 //   <div>
 
@@ -237,11 +234,10 @@ import Clock from "./Clock";
 
 // <br />
 
-// {/* 
+// {/*
 // Use console.log(variable) → logs only the value.
 
 // Use console.log({variable}) → logs an object with the variable name as the key. */}
-
 
 // <button onClick={()=>{console.log(val,value,values)}}> showing on console </button>
 
@@ -251,15 +247,12 @@ import Clock from "./Clock";
 // }
 // export default InputFunct;
 
-
-
 // function App(params) {
 //   return(
 //     <Skills/>
 //   )
 // }
 // export default App;
- 
 
 // function App(params) {
 //   return(
@@ -268,7 +261,6 @@ import Clock from "./Clock";
 // }
 // export default App;
 
-
 // function App(params) {
 //   return(
 //     <Tableloop/>
@@ -276,18 +268,108 @@ import Clock from "./Clock";
 // }
 // export default App;
 
+// function App(params) {
+//   const [Color, setColor] = useState("pink")
+//   return(
+//     <>
+//     <select onChange={(e)=>{setColor(e.target.value)}} >
+//       <option value="orange">orange</option>
+//       <option value="red">red</option>
+//       <option value="green">green</option>
+//       <option value="pink">pink</option>
+//     </select>
+//     <Clock color={Color}/>
+//     </>
+//   )
+// }
+// export default App;
+
 function App(params) {
-  const [Color, setColor] = useState("pink")
-  return(
+  const CollegeData = [
+    {
+      Name: "Dj",
+      City: "karachi",
+      Student: [
+        {
+          Name: "hani",
+          Age: "18",
+        },
+        {
+          Name: "Ali",
+          Age: "18",
+        },
+        {
+          Name: "Zahid",
+          Age: "18",
+        },
+      ],
+    },
+    {
+      Name: "iit",
+      City: "islamabad",
+      Student: [
+        {
+          Name: "hani",
+          Age: "18",
+        },
+        {
+          Name: "Ali",
+          Age: "18",
+        },
+        {
+          Name: "Zahid",
+          Age: "18",
+        },
+      ],
+    },
+    {
+      Name: "adamjee",
+      City: "net",
+      Student: [
+        {
+          Name: "hani",
+          Age: "18",
+        },
+        {
+          Name: "Ali",
+          Age: "18",
+        },
+        {
+          Name: "Zahid",
+          Age: "18",
+        },
+      ],
+    },
+    {
+      Name: "ietc",
+      City: "lahore",
+      Student: [
+        {
+          Name: "hani",
+          Age: "18",
+        },
+        {
+          Name: "Ali",
+          Age: "18",
+        },
+        {
+          Name: "Zahid",
+          Age: "18",
+        },
+      ],
+    },
+  ];
+  return (
     <>
-    <select onChange={(e)=>{setColor(e.target.value)}} >
-      <option value="orange">orange</option>
-      <option value="red">red</option>
-      <option value="green">green</option>
-      <option value="pink">pink</option>
-    </select>
-    <Clock color={Color}/>
+      <h1>nested loop</h1>
+      {CollegeData.map((data,index) => (
+        <div key={index} style={{backgroundColor:"Grey",borderRadius:"10px",borderBottom:"5px solid black",padding:"10px",margin:"10px"}}>
+        <ColNames Data={data}/>
+         
+        </div>
+      ))}
+ 
     </>
-  )
+  );
 }
 export default App;
