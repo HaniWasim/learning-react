@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 // import User from "./userComp";
 import UserProps from "./prop";
 // import College from "./college";
@@ -10,7 +10,6 @@ import Tableloop from "./skills";
 import Clock from "./Clock";
 import ColNames from "./CollegeNmaes";
 // import ColStd from "./collegecand";
-
 
 // import Counter from "./counter";
 
@@ -284,91 +283,115 @@ import ColNames from "./CollegeNmaes";
 // }
 // export default App;
 
+// function App(params) {
+//   const CollegeData = [
+//     {
+//       Name: "Dj",
+//       City: "karachi",
+//       Student: [
+//         {
+//           Name: "hani",
+//           Age: "18",
+//         },
+//         {
+//           Name: "Ali",
+//           Age: "18",
+//         },
+//         {
+//           Name: "Zahid",
+//           Age: "18",
+//         },
+//       ],
+//     },
+//     {
+//       Name: "iit",
+//       City: "islamabad",
+//       Student: [
+//         {
+//           Name: "hani",
+//           Age: "18",
+//         },
+//         {
+//           Name: "Ali",
+//           Age: "18",
+//         },
+//         {
+//           Name: "Zahid",
+//           Age: "18",
+//         },
+//       ],
+//     },
+//     {
+//       Name: "adamjee",
+//       City: "net",
+//       Student: [
+//         {
+//           Name: "hani",
+//           Age: "18",
+//         },
+//         {
+//           Name: "Ali",
+//           Age: "18",
+//         },
+//         {
+//           Name: "Zahid",
+//           Age: "18",
+//         },
+//       ],
+//     },
+//     {
+//       Name: "ietc",
+//       City: "lahore",
+//       Student: [
+//         {
+//           Name: "hani",
+//           Age: "18",
+//         },
+//         {
+//           Name: "Ali",
+//           Age: "18",
+//         },
+//         {
+//           Name: "Zahid",
+//           Age: "18",
+//         },
+//       ],
+//     },
+//   ];
+//   return (
+//     <>
+//       <h1>nested loop</h1>
+//       {CollegeData.map((data,index) => (
+//         <div key={index} style={{backgroundColor:"Grey",borderRadius:"10px",borderBottom:"5px solid black",padding:"10px",margin:"10px"}}>
+//         <ColNames Data={data}/>
+
+//         </div>
+//       ))}
+
+//     </>
+//   );
+// }
+// export default App;
+
 function App(params) {
-  const CollegeData = [
-    {
-      Name: "Dj",
-      City: "karachi",
-      Student: [
-        {
-          Name: "hani",
-          Age: "18",
-        },
-        {
-          Name: "Ali",
-          Age: "18",
-        },
-        {
-          Name: "Zahid",
-          Age: "18",
-        },
-      ],
-    },
-    {
-      Name: "iit",
-      City: "islamabad",
-      Student: [
-        {
-          Name: "hani",
-          Age: "18",
-        },
-        {
-          Name: "Ali",
-          Age: "18",
-        },
-        {
-          Name: "Zahid",
-          Age: "18",
-        },
-      ],
-    },
-    {
-      Name: "adamjee",
-      City: "net",
-      Student: [
-        {
-          Name: "hani",
-          Age: "18",
-        },
-        {
-          Name: "Ali",
-          Age: "18",
-        },
-        {
-          Name: "Zahid",
-          Age: "18",
-        },
-      ],
-    },
-    {
-      Name: "ietc",
-      City: "lahore",
-      Student: [
-        {
-          Name: "hani",
-          Age: "18",
-        },
-        {
-          Name: "Ali",
-          Age: "18",
-        },
-        {
-          Name: "Zahid",
-          Age: "18",
-        },
-      ],
-    },
-  ];
+  const [deal, setdeal] = useState(0);
+  const [counter, setcounter] = useState(0);
+
+  function Handledeal(params) {
+console.log(deal)  
+}
+useEffect(() => {
+  
+  Handledeal();
+}, [deal,counter])
+
   return (
     <>
-      <h1>nested loop</h1>
-      {CollegeData.map((data,index) => (
-        <div key={index} style={{backgroundColor:"Grey",borderRadius:"10px",borderBottom:"5px solid black",padding:"10px",margin:"10px"}}>
-        <ColNames Data={data}/>
-         
-        </div>
-      ))}
- 
+      <h1>learning use Effect</h1>
+<button onClick={()=>{setdeal(deal+1)}}> deal{deal}</button>
+<button onClick={()=>{setcounter(counter+1)}}> Counter{counter}</button>
+
+
     </>
   );
 }
