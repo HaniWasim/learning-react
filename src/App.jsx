@@ -9,6 +9,7 @@ import Radiobox from "./skills";
 import Tableloop from "./skills";
 import Clock from "./Clock";
 import ColNames from "./CollegeNmaes";
+import Counter from "./counter2";
 // import ColStd from "./collegecand";
 
 // import Counter from "./counter";
@@ -373,20 +374,40 @@ import ColNames from "./CollegeNmaes";
 // }
 // export default App;
 
+// function App(params) {
+//   const [deal, setdeal] = useState(0);
+//   const [counter, setcounter] = useState(0);
+
+//   function Handledeal(params) {
+// console.log(deal)  
+// }
+// useEffect(() => {
+  
+//   Handledeal();
+// }, [deal,counter])
+
+//   return (
+//     <>
+//       <h1>learning use Effect</h1>
+// <button onClick={()=>{setdeal(deal+1)}}> deal{deal}</button>
+// <button onClick={()=>{setcounter(counter+1)}}> Counter{counter}</button>
+
+
+//     </>
+//   );
+// }
+// export default App;
+
+
+
 function App(params) {
   const [deal, setdeal] = useState(0);
   const [counter, setcounter] = useState(0);
 
-  function Handledeal(params) {
-console.log(deal)  
-}
-useEffect(() => {
-  
-  Handledeal();
-}, [deal,counter])
 
   return (
     <>
+<Counter deal={deal} counter={counter} />
       <h1>learning use Effect</h1>
 <button onClick={()=>{setdeal(deal+1)}}> deal{deal}</button>
 <button onClick={()=>{setcounter(counter+1)}}> Counter{counter}</button>
