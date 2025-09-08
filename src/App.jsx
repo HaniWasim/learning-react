@@ -1,4 +1,4 @@
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 // import User from "./userComp";
 import UserProps from "./prop";
 // import College from "./college";
@@ -379,10 +379,10 @@ import Counter from "./counter2";
 //   const [counter, setcounter] = useState(0);
 
 //   function Handledeal(params) {
-// console.log(deal)  
+// console.log(deal)
 // }
 // useEffect(() => {
-  
+
 //   Handledeal();
 // }, [deal,counter])
 
@@ -392,34 +392,226 @@ import Counter from "./counter2";
 // <button onClick={()=>{setdeal(deal+1)}}> deal{deal}</button>
 // <button onClick={()=>{setcounter(counter+1)}}> Counter{counter}</button>
 
-
 //     </>
 //   );
 // }
 // export default App;
 
-
-
 function App(params) {
-  const [deal, setdeal] = useState(0);
-  const [counter, setcounter] = useState(0);
-  const [Display, setDisplay] = useState();
-
-
-
+  const [mainstyle, setmainstyle] = useState({
+    width: "200px",
+    border: "1px solid #e4e4e4",
+    borderRadius: "10px",
+    boxShadow: "#ffffff 1px 1px 1px 0px",
+    margin: "10px ",
+  })
+  const [Textcolour, setTextcolor] = useState('')
+  const [Grid, setGrid] = useState(true)
+  function UpdateTheme(bgcolor,Textcolor) {
+    setmainstyle({...mainstyle,backgroundColor:bgcolor})
+setTextcolor(Textcolor)
+  }
   return (
     <>
-    {
+      <h1 style={{ color: "red" }}>Inline style css</h1>
+      <button onClick={()=>{UpdateTheme('rgb(68 85 107)','rgb(23 27 60)')}}>Change Theme</button>
+      <button onClick={()=>{UpdateTheme('#ffff','black')}}>Default Theme</button>
+      <button onClick={()=>{setGrid(!Grid)}}> Toogle Grid</button>
 
-Display?<Counter deal={deal} counter={counter} Display={Display}/>:null
-    }
-     
-<button onClick={()=>{setdeal(deal+1)}}> deal{deal}</button>
-<button onClick={()=>{setcounter(counter+1)}}> Counter{counter}</button>
-<button onClick={()=>{setDisplay(!Display)}}> Toggle</button>
-
-
-
+      <div style={{ display:Grid?"flex":"block", flexWrap: "wrap" }}>
+        <div style={mainstyle}>
+          <img
+            style={{ width: "200px", borderRadius: "5px 5px 1px 1px " }}
+            src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt=""
+          />
+          <div style={{ marginLeft: "10px" ,color:Textcolour}}>
+            <h3>Ali Khan</h3>
+            <h4>Developer</h4>
+          </div>
+        </div>
+          <div style={mainstyle}>
+          <img
+            style={{ width: "200px", borderRadius: "5px 5px 1px 1px " }}
+            src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt=""
+          />
+          <div style={{ marginLeft: "10px" ,color:Textcolour}}>
+            <h3>Ali Khan</h3>
+            <h4>Developer</h4>
+          </div>
+        </div>  <div style={mainstyle}>
+          <img
+            style={{ width: "200px", borderRadius: "5px 5px 1px 1px " }}
+            src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt=""
+          />
+          <div style={{ marginLeft: "10px" ,color:Textcolour}}>
+            <h3>Ali Khan</h3>
+            <h4>Developer</h4>
+          </div>
+        </div>  <div style={mainstyle}>
+          <img
+            style={{ width: "200px", borderRadius: "5px 5px 1px 1px " }}
+            src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt=""
+          />
+          <div style={{ marginLeft: "10px" ,color:Textcolour}}>
+            <h3>Ali Khan</h3>
+            <h4>Developer</h4>
+          </div>
+        </div>  <div style={mainstyle}>
+          <img
+            style={{ width: "200px", borderRadius: "5px 5px 1px 1px " }}
+            src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt=""
+          />
+          <div style={{ marginLeft: "10px" ,color:Textcolour}}>
+            <h3>Ali Khan</h3>
+            <h4>Developer</h4>
+          </div>
+        </div>  <div style={mainstyle}>
+          <img
+            style={{ width: "200px", borderRadius: "5px 5px 1px 1px " }}
+            src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt=""
+          />
+          <div style={{ marginLeft: "10px" ,color:Textcolour}}>
+            <h3>Ali Khan</h3>
+            <h4>Developer</h4>
+          </div>
+        </div>  <div style={mainstyle}>
+          <img
+            style={{ width: "200px", borderRadius: "5px 5px 1px 1px " }}
+            src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt=""
+          />
+          <div style={{ marginLeft: "10px" ,color:Textcolour}}>
+            <h3>Ali Khan</h3>
+            <h4>Developer</h4>
+          </div>
+        </div>  <div style={mainstyle}>
+          <img
+            style={{ width: "200px", borderRadius: "5px 5px 1px 1px " }}
+            src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt=""
+          />
+          <div style={{ marginLeft: "10px" ,color:Textcolour}}>
+            <h3>Ali Khan</h3>
+            <h4>Developer</h4>
+          </div>
+        </div>  <div style={mainstyle}>
+          <img
+            style={{ width: "200px", borderRadius: "5px 5px 1px 1px " }}
+            src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt=""
+          />
+          <div style={{ marginLeft: "10px" ,color:Textcolour}}>
+            <h3>Ali Khan</h3>
+            <h4>Developer</h4>
+          </div>
+        </div>  <div style={mainstyle}>
+          <img
+            style={{ width: "200px", borderRadius: "5px 5px 1px 1px " }}
+            src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt=""
+          />
+          <div style={{ marginLeft: "10px" ,color:Textcolour}}>
+            <h3>Ali Khan</h3>
+            <h4>Developer</h4>
+          </div>
+        </div>  <div style={mainstyle}>
+          <img
+            style={{ width: "200px", borderRadius: "5px 5px 1px 1px " }}
+            src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt=""
+          />
+          <div style={{ marginLeft: "10px" ,color:Textcolour}}>
+            <h3>Ali Khan</h3>
+            <h4>Developer</h4>
+          </div>
+        </div>  <div style={mainstyle}>
+          <img
+            style={{ width: "200px", borderRadius: "5px 5px 1px 1px " }}
+            src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt=""
+          />
+          <div style={{ marginLeft: "10px" ,color:Textcolour}}>
+            <h3>Ali Khan</h3>
+            <h4>Developer</h4>
+          </div>
+        </div>  <div style={mainstyle}>
+          <img
+            style={{ width: "200px", borderRadius: "5px 5px 1px 1px " }}
+            src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt=""
+          />
+          <div style={{ marginLeft: "10px" ,color:Textcolour}}>
+            <h3>Ali Khan</h3>
+            <h4>Developer</h4>
+          </div>
+        </div>  <div style={mainstyle}>
+          <img
+            style={{ width: "200px", borderRadius: "5px 5px 1px 1px " }}
+            src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt=""
+          />
+          <div style={{ marginLeft: "10px" ,color:Textcolour}}>
+            <h3>Ali Khan</h3>
+            <h4>Developer</h4>
+          </div>
+        </div>  <div style={mainstyle}>
+          <img
+            style={{ width: "200px", borderRadius: "5px 5px 1px 1px " }}
+            src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt=""
+          />
+          <div style={{ marginLeft: "10px" ,color:Textcolour}}>
+            <h3>Ali Khan</h3>
+            <h4>Developer</h4>
+          </div>
+        </div>  <div style={mainstyle}>
+          <img
+            style={{ width: "200px", borderRadius: "5px 5px 1px 1px " }}
+            src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt=""
+          />
+          <div style={{ marginLeft: "10px" ,color:Textcolour}}>
+            <h3>Ali Khan</h3>
+            <h4>Developer</h4>
+          </div>
+        </div>  <div style={mainstyle}>
+          <img
+            style={{ width: "200px", borderRadius: "5px 5px 1px 1px " }}
+            src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt=""
+          />
+          <div style={{ marginLeft: "10px" ,color:Textcolour}}>
+            <h3>Ali Khan</h3>
+            <h4>Developer</h4>
+          </div>
+        </div>  <div style={mainstyle}>
+          <img
+            style={{ width: "200px", borderRadius: "5px 5px 1px 1px " }}
+            src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt=""
+          />
+          <div style={{ marginLeft: "10px" ,color:Textcolour}}>
+            <h3>Ali Khan</h3>
+            <h4>Developer</h4>
+          </div>
+        </div>  <div style={mainstyle}>
+          <img
+            style={{ width: "200px", borderRadius: "5px 5px 1px 1px " }}
+            src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt=""
+          />
+          <div style={{ marginLeft: "10px" ,color:Textcolour}}>
+            <h3>Ali Khan</h3>
+            <h4>Developer</h4>
+          </div>
+        </div>
+      </div>
     </>
   );
 }
