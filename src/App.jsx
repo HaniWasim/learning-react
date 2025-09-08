@@ -403,14 +403,21 @@ import Counter from "./counter2";
 function App(params) {
   const [deal, setdeal] = useState(0);
   const [counter, setcounter] = useState(0);
+  const [Display, setDisplay] = useState();
+
 
 
   return (
     <>
-<Counter deal={deal} counter={counter} />
-      <h1>learning use Effect</h1>
+    {
+
+Display?<Counter deal={deal} counter={counter} Display={Display}/>:null
+    }
+     
 <button onClick={()=>{setdeal(deal+1)}}> deal{deal}</button>
 <button onClick={()=>{setcounter(counter+1)}}> Counter{counter}</button>
+<button onClick={()=>{setDisplay(!Display)}}> Toggle</button>
+
 
 
     </>
