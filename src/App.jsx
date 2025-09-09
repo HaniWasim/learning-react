@@ -12,7 +12,7 @@ import ColNames from "./CollegeNmaes";
 import Counter from "./counter2";
 import "./css/style.css";
 import Userprofile from "./Userprofile";
-import styled from 'styled-components'
+import styled from "styled-components";
 // import ColStd from "./collegecand";
 
 // import Counter from "./counter";
@@ -725,7 +725,7 @@ import styled from 'styled-components'
 //             <h3>Ilyas Khan</h3>
 //             <h5>Actor </h5>
 //           </div>
-//         </div>  
+//         </div>
 //       </div>
 //     </div>
 //   );
@@ -733,7 +733,7 @@ import styled from 'styled-components'
 // export default App;
 
 // function App(params) {
-  
+
 //   return(
 // <div>
 //     <Userprofile/>
@@ -743,36 +743,82 @@ import styled from 'styled-components'
 // }
 // export default App;
 
+// function App(params) {
+//   const Heading = styled.h2`
+//   color:red;
+//   border:1px solid black;
+//   border-radius:5px;
+//   padding:10px;
+//   background-color:#ccc
+//   `
+//   const  StyleBtn =styled.button({
+// color:'red',
+// width:'130px',
+// backgroundColor:'#ccc',
+// height:'50px',
+// margin:'30px'
+//   })
+//   return(
+//     <div>
+
+//     <h1>hey there !</h1>
+//     <Heading>Hani </Heading>
+//     <Heading>Hani </Heading>
+//     <Heading>Hani </Heading>
+//     <Heading>Hani </Heading>
+//     <Heading>Hani </Heading>
+//   <StyleBtn>Login</StyleBtn>
+//   <StyleBtn>Logout</StyleBtn>
+//   <StyleBtn>Signin</StyleBtn>
+//   <StyleBtn>Singout</StyleBtn>
+//     </div>
+//   )
+// }
+// export default App;
+
+import { Button } from "react-bootstrap";
+import { Alert } from "react-bootstrap";
+
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+
 
 function App(params) {
-  const Heading = styled.h2`
-  color:red;
-  border:1px solid black;
-  border-radius:5px;
-  padding:10px;
-  background-color:#ccc
-  `
-  const  StyleBtn =styled.button({
-color:'red',
-width:'130px',
-backgroundColor:'#ccc',
-height:'50px',
-margin:'30px'
-  })
-  return(
+  return (
     <div>
+      <>
+      
+       <Navbar expand="lg" className="bg-body-tertiary">
+      <Container>
+        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="#link">Link</Nav.Link>
+            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2">
+                Another action
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.4">
+                Separated link
+              </NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
 
-    <h1>hey there !</h1>
-    <Heading>Hani </Heading>
-    <Heading>Hani </Heading>
-    <Heading>Hani </Heading>
-    <Heading>Hani </Heading>
-    <Heading>Hani </Heading>
-  <StyleBtn>Login</StyleBtn>
-  <StyleBtn>Logout</StyleBtn>
-  <StyleBtn>Signin</StyleBtn>
-  <StyleBtn>Singout</StyleBtn>
+      
+      </>
+      <Button>ok</Button>
+    <Alert variant="danger">hani its not over</Alert>
     </div>
-  )
+  );
 }
 export default App;
