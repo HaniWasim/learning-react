@@ -12,6 +12,7 @@ import ColNames from "./CollegeNmaes";
 import Counter from "./counter2";
 import "./css/style.css";
 import Userprofile from "./Userprofile";
+import styled from 'styled-components'
 // import ColStd from "./collegecand";
 
 // import Counter from "./counter";
@@ -731,13 +732,47 @@ import Userprofile from "./Userprofile";
 // }
 // export default App;
 
-function App(params) {
+// function App(params) {
   
-  return(
-<div>
-    <Userprofile/>
+//   return(
+// <div>
+//     <Userprofile/>
 
-</div>
+// </div>
+//   )
+// }
+// export default App;
+
+
+function App(params) {
+  const Heading = styled.h2`
+  color:red;
+  border:1px solid black;
+  border-radius:5px;
+  padding:10px;
+  background-color:#ccc
+  `
+  const  StyleBtn =styled.button({
+color:'red',
+width:'130px',
+backgroundColor:'#ccc',
+height:'50px',
+margin:'30px'
+  })
+  return(
+    <div>
+
+    <h1>hey there !</h1>
+    <Heading>Hani </Heading>
+    <Heading>Hani </Heading>
+    <Heading>Hani </Heading>
+    <Heading>Hani </Heading>
+    <Heading>Hani </Heading>
+  <StyleBtn>Login</StyleBtn>
+  <StyleBtn>Logout</StyleBtn>
+  <StyleBtn>Signin</StyleBtn>
+  <StyleBtn>Singout</StyleBtn>
+    </div>
   )
 }
 export default App;
