@@ -10,6 +10,8 @@ import Tableloop from "./skills";
 import Clock from "./Clock";
 import ColNames from "./CollegeNmaes";
 import Counter from "./counter2";
+import "./css/style.css";
+import Userprofile from "./Userprofile";
 // import ColStd from "./collegecand";
 
 // import Counter from "./counter";
@@ -397,222 +399,345 @@ import Counter from "./counter2";
 // }
 // export default App;
 
-function App(params) {
-  const [mainstyle, setmainstyle] = useState({
-    width: "200px",
-    border: "1px solid #e4e4e4",
-    borderRadius: "10px",
-    boxShadow: "#ffffff 1px 1px 1px 0px",
-    margin: "10px ",
-  })
-  const [Textcolour, setTextcolor] = useState('')
-  const [Grid, setGrid] = useState(true)
-  function UpdateTheme(bgcolor,Textcolor) {
-    setmainstyle({...mainstyle,backgroundColor:bgcolor})
-setTextcolor(Textcolor)
-  }
-  return (
-    <>
-      <h1 style={{ color: "red" }}>Inline style css</h1>
-      <button onClick={()=>{UpdateTheme('rgb(68 85 107)','rgb(23 27 60)')}}>Change Theme</button>
-      <button onClick={()=>{UpdateTheme('#ffff','black')}}>Default Theme</button>
-      <button onClick={()=>{setGrid(!Grid)}}> Toogle Grid</button>
+// function App(params) {
+//   const [mainstyle, setmainstyle] = useState({
+//     width: "200px",
+//     border: "1px solid #e4e4e4",
+//     borderRadius: "10px",
+//     boxShadow: "#ffffff 1px 1px 1px 0px",
+//     margin: "10px ",
+//   })
+//   const [Textcolour, setTextcolor] = useState('')
+//   const [Grid, setGrid] = useState(true)
+//   function UpdateTheme(bgcolor,Textcolor) {
+//     setmainstyle({...mainstyle,backgroundColor:bgcolor})
+// setTextcolor(Textcolor)
+//   }
+//   return (
+//     <>
+//       <h1 style={{ color: "red" }}>Inline style css</h1>
+//       <button onClick={()=>{UpdateTheme('rgb(68 85 107)','rgb(23 27 60)')}}>Change Theme</button>
+//       <button onClick={()=>{UpdateTheme('#ffff','black')}}>Default Theme</button>
+//       <button onClick={()=>{setGrid(!Grid)}}> Toogle Grid</button>
 
-      <div style={{ display:Grid?"flex":"block", flexWrap: "wrap" }}>
-        <div style={mainstyle}>
-          <img
-            style={{ width: "200px", borderRadius: "5px 5px 1px 1px " }}
-            src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt=""
-          />
-          <div style={{ marginLeft: "10px" ,color:Textcolour}}>
-            <h3>Ali Khan</h3>
-            <h4>Developer</h4>
-          </div>
-        </div>
-          <div style={mainstyle}>
-          <img
-            style={{ width: "200px", borderRadius: "5px 5px 1px 1px " }}
-            src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt=""
-          />
-          <div style={{ marginLeft: "10px" ,color:Textcolour}}>
-            <h3>Ali Khan</h3>
-            <h4>Developer</h4>
-          </div>
-        </div>  <div style={mainstyle}>
-          <img
-            style={{ width: "200px", borderRadius: "5px 5px 1px 1px " }}
-            src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt=""
-          />
-          <div style={{ marginLeft: "10px" ,color:Textcolour}}>
-            <h3>Ali Khan</h3>
-            <h4>Developer</h4>
-          </div>
-        </div>  <div style={mainstyle}>
-          <img
-            style={{ width: "200px", borderRadius: "5px 5px 1px 1px " }}
-            src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt=""
-          />
-          <div style={{ marginLeft: "10px" ,color:Textcolour}}>
-            <h3>Ali Khan</h3>
-            <h4>Developer</h4>
-          </div>
-        </div>  <div style={mainstyle}>
-          <img
-            style={{ width: "200px", borderRadius: "5px 5px 1px 1px " }}
-            src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt=""
-          />
-          <div style={{ marginLeft: "10px" ,color:Textcolour}}>
-            <h3>Ali Khan</h3>
-            <h4>Developer</h4>
-          </div>
-        </div>  <div style={mainstyle}>
-          <img
-            style={{ width: "200px", borderRadius: "5px 5px 1px 1px " }}
-            src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt=""
-          />
-          <div style={{ marginLeft: "10px" ,color:Textcolour}}>
-            <h3>Ali Khan</h3>
-            <h4>Developer</h4>
-          </div>
-        </div>  <div style={mainstyle}>
-          <img
-            style={{ width: "200px", borderRadius: "5px 5px 1px 1px " }}
-            src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt=""
-          />
-          <div style={{ marginLeft: "10px" ,color:Textcolour}}>
-            <h3>Ali Khan</h3>
-            <h4>Developer</h4>
-          </div>
-        </div>  <div style={mainstyle}>
-          <img
-            style={{ width: "200px", borderRadius: "5px 5px 1px 1px " }}
-            src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt=""
-          />
-          <div style={{ marginLeft: "10px" ,color:Textcolour}}>
-            <h3>Ali Khan</h3>
-            <h4>Developer</h4>
-          </div>
-        </div>  <div style={mainstyle}>
-          <img
-            style={{ width: "200px", borderRadius: "5px 5px 1px 1px " }}
-            src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt=""
-          />
-          <div style={{ marginLeft: "10px" ,color:Textcolour}}>
-            <h3>Ali Khan</h3>
-            <h4>Developer</h4>
-          </div>
-        </div>  <div style={mainstyle}>
-          <img
-            style={{ width: "200px", borderRadius: "5px 5px 1px 1px " }}
-            src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt=""
-          />
-          <div style={{ marginLeft: "10px" ,color:Textcolour}}>
-            <h3>Ali Khan</h3>
-            <h4>Developer</h4>
-          </div>
-        </div>  <div style={mainstyle}>
-          <img
-            style={{ width: "200px", borderRadius: "5px 5px 1px 1px " }}
-            src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt=""
-          />
-          <div style={{ marginLeft: "10px" ,color:Textcolour}}>
-            <h3>Ali Khan</h3>
-            <h4>Developer</h4>
-          </div>
-        </div>  <div style={mainstyle}>
-          <img
-            style={{ width: "200px", borderRadius: "5px 5px 1px 1px " }}
-            src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt=""
-          />
-          <div style={{ marginLeft: "10px" ,color:Textcolour}}>
-            <h3>Ali Khan</h3>
-            <h4>Developer</h4>
-          </div>
-        </div>  <div style={mainstyle}>
-          <img
-            style={{ width: "200px", borderRadius: "5px 5px 1px 1px " }}
-            src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt=""
-          />
-          <div style={{ marginLeft: "10px" ,color:Textcolour}}>
-            <h3>Ali Khan</h3>
-            <h4>Developer</h4>
-          </div>
-        </div>  <div style={mainstyle}>
-          <img
-            style={{ width: "200px", borderRadius: "5px 5px 1px 1px " }}
-            src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt=""
-          />
-          <div style={{ marginLeft: "10px" ,color:Textcolour}}>
-            <h3>Ali Khan</h3>
-            <h4>Developer</h4>
-          </div>
-        </div>  <div style={mainstyle}>
-          <img
-            style={{ width: "200px", borderRadius: "5px 5px 1px 1px " }}
-            src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt=""
-          />
-          <div style={{ marginLeft: "10px" ,color:Textcolour}}>
-            <h3>Ali Khan</h3>
-            <h4>Developer</h4>
-          </div>
-        </div>  <div style={mainstyle}>
-          <img
-            style={{ width: "200px", borderRadius: "5px 5px 1px 1px " }}
-            src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt=""
-          />
-          <div style={{ marginLeft: "10px" ,color:Textcolour}}>
-            <h3>Ali Khan</h3>
-            <h4>Developer</h4>
-          </div>
-        </div>  <div style={mainstyle}>
-          <img
-            style={{ width: "200px", borderRadius: "5px 5px 1px 1px " }}
-            src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt=""
-          />
-          <div style={{ marginLeft: "10px" ,color:Textcolour}}>
-            <h3>Ali Khan</h3>
-            <h4>Developer</h4>
-          </div>
-        </div>  <div style={mainstyle}>
-          <img
-            style={{ width: "200px", borderRadius: "5px 5px 1px 1px " }}
-            src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt=""
-          />
-          <div style={{ marginLeft: "10px" ,color:Textcolour}}>
-            <h3>Ali Khan</h3>
-            <h4>Developer</h4>
-          </div>
-        </div>  <div style={mainstyle}>
-          <img
-            style={{ width: "200px", borderRadius: "5px 5px 1px 1px " }}
-            src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt=""
-          />
-          <div style={{ marginLeft: "10px" ,color:Textcolour}}>
-            <h3>Ali Khan</h3>
-            <h4>Developer</h4>
-          </div>
-        </div>
-      </div>
-    </>
-  );
+//       <div style={{ display:Grid?"flex":"block", flexWrap: "wrap" }}>
+//         <div style={mainstyle}>
+//           <img
+//             style={{ width: "200px", borderRadius: "5px 5px 1px 1px " }}
+//             src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+//             alt=""
+//           />
+//           <div style={{ marginLeft: "10px" ,color:Textcolour}}>
+//             <h3>Ali Khan</h3>
+//             <h4>Developer</h4>
+//           </div>
+//         </div>
+//           <div style={mainstyle}>
+//           <img
+//             style={{ width: "200px", borderRadius: "5px 5px 1px 1px " }}
+//             src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+//             alt=""
+//           />
+//           <div style={{ marginLeft: "10px" ,color:Textcolour}}>
+//             <h3>Ali Khan</h3>
+//             <h4>Developer</h4>
+//           </div>
+//         </div>  <div style={mainstyle}>
+//           <img
+//             style={{ width: "200px", borderRadius: "5px 5px 1px 1px " }}
+//             src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+//             alt=""
+//           />
+//           <div style={{ marginLeft: "10px" ,color:Textcolour}}>
+//             <h3>Ali Khan</h3>
+//             <h4>Developer</h4>
+//           </div>
+//         </div>  <div style={mainstyle}>
+//           <img
+//             style={{ width: "200px", borderRadius: "5px 5px 1px 1px " }}
+//             src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+//             alt=""
+//           />
+//           <div style={{ marginLeft: "10px" ,color:Textcolour}}>
+//             <h3>Ali Khan</h3>
+//             <h4>Developer</h4>
+//           </div>
+//         </div>  <div style={mainstyle}>
+//           <img
+//             style={{ width: "200px", borderRadius: "5px 5px 1px 1px " }}
+//             src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+//             alt=""
+//           />
+//           <div style={{ marginLeft: "10px" ,color:Textcolour}}>
+//             <h3>Ali Khan</h3>
+//             <h4>Developer</h4>
+//           </div>
+//         </div>  <div style={mainstyle}>
+//           <img
+//             style={{ width: "200px", borderRadius: "5px 5px 1px 1px " }}
+//             src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+//             alt=""
+//           />
+//           <div style={{ marginLeft: "10px" ,color:Textcolour}}>
+//             <h3>Ali Khan</h3>
+//             <h4>Developer</h4>
+//           </div>
+//         </div>  <div style={mainstyle}>
+//           <img
+//             style={{ width: "200px", borderRadius: "5px 5px 1px 1px " }}
+//             src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+//             alt=""
+//           />
+//           <div style={{ marginLeft: "10px" ,color:Textcolour}}>
+//             <h3>Ali Khan</h3>
+//             <h4>Developer</h4>
+//           </div>
+//         </div>  <div style={mainstyle}>
+//           <img
+//             style={{ width: "200px", borderRadius: "5px 5px 1px 1px " }}
+//             src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+//             alt=""
+//           />
+//           <div style={{ marginLeft: "10px" ,color:Textcolour}}>
+//             <h3>Ali Khan</h3>
+//             <h4>Developer</h4>
+//           </div>
+//         </div>  <div style={mainstyle}>
+//           <img
+//             style={{ width: "200px", borderRadius: "5px 5px 1px 1px " }}
+//             src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+//             alt=""
+//           />
+//           <div style={{ marginLeft: "10px" ,color:Textcolour}}>
+//             <h3>Ali Khan</h3>
+//             <h4>Developer</h4>
+//           </div>
+//         </div>  <div style={mainstyle}>
+//           <img
+//             style={{ width: "200px", borderRadius: "5px 5px 1px 1px " }}
+//             src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+//             alt=""
+//           />
+//           <div style={{ marginLeft: "10px" ,color:Textcolour}}>
+//             <h3>Ali Khan</h3>
+//             <h4>Developer</h4>
+//           </div>
+//         </div>  <div style={mainstyle}>
+//           <img
+//             style={{ width: "200px", borderRadius: "5px 5px 1px 1px " }}
+//             src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+//             alt=""
+//           />
+//           <div style={{ marginLeft: "10px" ,color:Textcolour}}>
+//             <h3>Ali Khan</h3>
+//             <h4>Developer</h4>
+//           </div>
+//         </div>  <div style={mainstyle}>
+//           <img
+//             style={{ width: "200px", borderRadius: "5px 5px 1px 1px " }}
+//             src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+//             alt=""
+//           />
+//           <div style={{ marginLeft: "10px" ,color:Textcolour}}>
+//             <h3>Ali Khan</h3>
+//             <h4>Developer</h4>
+//           </div>
+//         </div>  <div style={mainstyle}>
+//           <img
+//             style={{ width: "200px", borderRadius: "5px 5px 1px 1px " }}
+//             src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+//             alt=""
+//           />
+//           <div style={{ marginLeft: "10px" ,color:Textcolour}}>
+//             <h3>Ali Khan</h3>
+//             <h4>Developer</h4>
+//           </div>
+//         </div>  <div style={mainstyle}>
+//           <img
+//             style={{ width: "200px", borderRadius: "5px 5px 1px 1px " }}
+//             src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+//             alt=""
+//           />
+//           <div style={{ marginLeft: "10px" ,color:Textcolour}}>
+//             <h3>Ali Khan</h3>
+//             <h4>Developer</h4>
+//           </div>
+//         </div>  <div style={mainstyle}>
+//           <img
+//             style={{ width: "200px", borderRadius: "5px 5px 1px 1px " }}
+//             src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+//             alt=""
+//           />
+//           <div style={{ marginLeft: "10px" ,color:Textcolour}}>
+//             <h3>Ali Khan</h3>
+//             <h4>Developer</h4>
+//           </div>
+//         </div>  <div style={mainstyle}>
+//           <img
+//             style={{ width: "200px", borderRadius: "5px 5px 1px 1px " }}
+//             src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+//             alt=""
+//           />
+//           <div style={{ marginLeft: "10px" ,color:Textcolour}}>
+//             <h3>Ali Khan</h3>
+//             <h4>Developer</h4>
+//           </div>
+//         </div>  <div style={mainstyle}>
+//           <img
+//             style={{ width: "200px", borderRadius: "5px 5px 1px 1px " }}
+//             src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+//             alt=""
+//           />
+//           <div style={{ marginLeft: "10px" ,color:Textcolour}}>
+//             <h3>Ali Khan</h3>
+//             <h4>Developer</h4>
+//           </div>
+//         </div>  <div style={mainstyle}>
+//           <img
+//             style={{ width: "200px", borderRadius: "5px 5px 1px 1px " }}
+//             src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+//             alt=""
+//           />
+//           <div style={{ marginLeft: "10px" ,color:Textcolour}}>
+//             <h3>Ali Khan</h3>
+//             <h4>Developer</h4>
+//           </div>
+//         </div>  <div style={mainstyle}>
+//           <img
+//             style={{ width: "200px", borderRadius: "5px 5px 1px 1px " }}
+//             src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+//             alt=""
+//           />
+//           <div style={{ marginLeft: "10px" ,color:Textcolour}}>
+//             <h3>Ali Khan</h3>
+//             <h4>Developer</h4>
+//           </div>
+//         </div>
+//       </div>
+//     </>
+//   );
+// }
+// export default App;
+
+// function App(params) {
+//   return (
+//     <div>
+//       <h1 className="heading">Using External Css</h1>
+//       <div className="mainCont">
+//         <div className="cont">
+//           <div>
+//             <img
+//               className="img"
+//               src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+//             />
+//           </div>
+//           <div className="textCont">
+//             <h3>Ilyas Khan</h3>
+//             <h5>Actor </h5>
+//           </div>
+//         </div>
+//           <div className="cont">
+//           <div>
+//             <img
+//               className="img"
+//               src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+//             />
+//           </div>
+//           <div className="textCont">
+//             <h3>Ilyas Khan</h3>
+//             <h5>Actor </h5>
+//           </div>
+//         </div>  <div className="cont">
+//           <div>
+//             <img
+//               className="img"
+//               src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+//             />
+//           </div>
+//           <div className="textCont">
+//             <h3>Ilyas Khan</h3>
+//             <h5>Actor </h5>
+//           </div>
+//         </div>  <div className="cont">
+//           <div>
+//             <img
+//               className="img"
+//               src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+//             />
+//           </div>
+//           <div className="textCont">
+//             <h3>Ilyas Khan</h3>
+//             <h5>Actor </h5>
+//           </div>
+//         </div>  <div className="cont">
+//           <div>
+//             <img
+//               className="img"
+//               src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+//             />
+//           </div>
+//           <div className="textCont">
+//             <h3>Ilyas Khan</h3>
+//             <h5>Actor </h5>
+//           </div>
+//         </div>  <div className="cont">
+//           <div>
+//             <img
+//               className="img"
+//               src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+//             />
+//           </div>
+//           <div className="textCont">
+//             <h3>Ilyas Khan</h3>
+//             <h5>Actor </h5>
+//           </div>
+//         </div>  <div className="cont">
+//           <div>
+//             <img
+//               className="img"
+//               src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+//             />
+//           </div>
+//           <div className="textCont">
+//             <h3>Ilyas Khan</h3>
+//             <h5>Actor </h5>
+//           </div>
+//         </div>  <div className="cont">
+//           <div>
+//             <img
+//               className="img"
+//               src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+//             />
+//           </div>
+//           <div className="textCont">
+//             <h3>Ilyas Khan</h3>
+//             <h5>Actor </h5>
+//           </div>
+//         </div>  <div className="cont">
+//           <div>
+//             <img
+//               className="img"
+//               src="https://images.unsplash.com/photo-1509923261489-fd580b2d9051?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+//             />
+//           </div>
+//           <div className="textCont">
+//             <h3>Ilyas Khan</h3>
+//             <h5>Actor </h5>
+//           </div>
+//         </div>  
+//       </div>
+//     </div>
+//   );
+// }
+// export default App;
+
+function App(params) {
+  
+  return(
+<div>
+    <Userprofile/>
+
+</div>
+  )
 }
 export default App;

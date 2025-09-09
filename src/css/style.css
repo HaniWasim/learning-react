@@ -1,0 +1,22 @@
+.heading{
+    color: red;
+}
+.textCont{
+    color: grey;
+    margin-left: 10px;
+}
+.img{
+    width: 200px;
+    /* height: 200px; */
+    
+}
+.cont{
+    border: 1px solid black;
+    width: 200px;
+
+    margin:  10px;
+}
+.mainCont{
+    display: flex;
+    flex-wrap: wrap;
+}
