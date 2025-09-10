@@ -776,48 +776,89 @@ import styled from "styled-components";
 // }
 // export default App;
 
-import { Button } from "react-bootstrap";
-import { Alert } from "react-bootstrap";
+// import { Button } from "react-bootstrap";
+// import { Alert } from "react-bootstrap";
 
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+// import Container from 'react-bootstrap/Container';
+// import Nav from 'react-bootstrap/Nav';
+// import Navbar from 'react-bootstrap/Navbar';
+// import NavDropdown from 'react-bootstrap/NavDropdown';
 
+// function App(params) {
+//   return (
+//     <div>
+//       <>
+
+//        <Navbar expand="lg" className="bg-body-tertiary">
+//       <Container>
+//         <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+//         <Navbar.Toggle aria-controls="basic-navbar-nav" />
+//         <Navbar.Collapse id="basic-navbar-nav">
+//           <Nav className="me-auto">
+//             <Nav.Link href="#home">Home</Nav.Link>
+//             <Nav.Link href="#link">Link</Nav.Link>
+//             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+//               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+//               <NavDropdown.Item href="#action/3.2">
+//                 Another action
+//               </NavDropdown.Item>
+//               <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+//               <NavDropdown.Divider />
+//               <NavDropdown.Item href="#action/3.4">
+//                 Separated link
+//               </NavDropdown.Item>
+//             </NavDropdown>
+//           </Nav>
+//         </Navbar.Collapse>
+//       </Container>
+//     </Navbar>
+
+//       </>
+//       <Button>ok</Button>
+//     <Alert variant="danger">hani its not over</Alert>
+//     </div>
+//   );
+// }
+// export default App;
+
+import { useRef } from "react";
 
 function App(params) {
+  const InputRef = useRef(null);
+  const h1Ref = useRef(null);
+
+  // const handleToggle = () => {
+  //   InputRef.current.focus();
+  //   InputRef.current.style.color = "red";
+  //   InputRef.current.placeholder = "Enter ur password";
+  //   InputRef.current.value = "shutup!";
+  // };
+  function handleToggle(params) {
+    console.log(InputRef);
+    if (InputRef.current.style.display != "none") {
+      InputRef.current.style.display = "none";
+    } else {
+      InputRef.current.style.display = "Inline";
+    }
+  }
+  const H1toggle = () => {
+       if (h1Ref.current.style.color != "") {
+     h1Ref.current.style.color = "";
+    } else {
+      h1Ref.current.style.color = "Grey";
+    }
+    // h1Ref.current.style.color = "Grey";
+  };
   return (
     <div>
-      <>
-      
-       <Navbar expand="lg" className="bg-body-tertiary">
-      <Container>
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
-            </NavDropdown>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+      <h1 ref={h1Ref}>Hello World </h1>
+      <div>
 
-      
-      </>
-      <Button>ok</Button>
-    <Alert variant="danger">hani its not over</Alert>
+      <button onClick={H1toggle}> change heading color </button>
+      </div>
+      <br />
+      <button onClick={handleToggle}>Toggle</button>
+      <input ref={InputRef} placeholder="enter ur text " type="text" />
     </div>
   );
 }
