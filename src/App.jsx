@@ -823,42 +823,102 @@ import styled from "styled-components";
 
 import { useRef } from "react";
 
-function App(params) {
-  const InputRef = useRef(null);
-  const h1Ref = useRef(null);
+// function App(params) {
+//   const InputRef = useRef(null);
+//   const h1Ref = useRef(null);
 
-  // const handleToggle = () => {
-  //   InputRef.current.focus();
-  //   InputRef.current.style.color = "red";
-  //   InputRef.current.placeholder = "Enter ur password";
-  //   InputRef.current.value = "shutup!";
-  // };
-  function handleToggle(params) {
-    console.log(InputRef);
-    if (InputRef.current.style.display != "none") {
-      InputRef.current.style.display = "none";
-    } else {
-      InputRef.current.style.display = "Inline";
-    }
+//   // const handleToggle = () => {
+//   //   InputRef.current.focus();
+//   //   InputRef.current.style.color = "red";
+//   //   InputRef.current.placeholder = "Enter ur password";
+//   //   InputRef.current.value = "shutup!";
+//   // };
+//   function handleToggle(params) {
+//     console.log(InputRef);
+//     if (InputRef.current.style.display != "none") {
+//       InputRef.current.style.display = "none";
+//     } else {
+//       InputRef.current.style.display = "Inline";
+//     }
+//   }
+//   const H1toggle = () => {
+//        if (h1Ref.current.style.color != "") {
+//      h1Ref.current.style.color = "";
+//     } else {
+//       h1Ref.current.style.color = "Grey";
+//     }
+//     // h1Ref.current.style.color = "Grey";
+//   };
+//   return (
+//     <div>
+//       <h1 ref={h1Ref}>Hello World </h1>
+//       <div>
+
+//       <button onClick={H1toggle}> change heading color </button>
+//       </div>
+//       <br />
+//       <button onClick={handleToggle}>Toggle</button>
+//       <input ref={InputRef} placeholder="enter ur text " type="text" />
+//     </div>
+//   );
+// }
+// export default App;
+function App(params) {
+  function SubmitDom(event) {
+    event.preventDefault();
+    const user = document.querySelector("#name").value;
+    const pass = document.querySelector("#pass").value;
+    console.log(user, pass);
   }
-  const H1toggle = () => {
-       if (h1Ref.current.style.color != "") {
-     h1Ref.current.style.color = "";
-    } else {
-      h1Ref.current.style.color = "Grey";
-    }
-    // h1Ref.current.style.color = "Grey";
-  };
+  const inputRef = useRef();
+  const passRef = useRef();
+
+  function submitRef(event) {
+    event.preventDefault();
+
+    const user = inputRef.current.value;
+    const pass = passRef.current.value;
+    console.log(user,pass);
+    
+  }
   return (
     <div>
-      <h1 ref={h1Ref}>Hello World </h1>
-      <div>
+      <h1>Form </h1>
+      <form action="" onSubmit={SubmitDom}>
+        <br />
 
-      <button onClick={H1toggle}> change heading color </button>
-      </div>
-      <br />
-      <button onClick={handleToggle}>Toggle</button>
-      <input ref={InputRef} placeholder="enter ur text " type="text" />
+        <input id="name" type="text" placeholder="enter  password" />
+        <br />
+        <br />
+        <input id="pass" type="password" placeholder="enter User name" />
+        <br />
+
+        <button>submit</button>
+      </form>
+      <hr />
+
+      <h1>Form </h1>
+      <form action="" onSubmit={submitRef}>
+        <br />
+
+        <input
+          id="nameRef"
+          ref={inputRef}
+          type="text"
+          placeholder="enter  password"
+        />
+        <br />
+        <br />
+        <input
+          id="passRef"
+          ref={passRef}
+          type="password"
+          placeholder="enter User name"
+        />
+        <br />
+
+        <button>submit</button>
+      </form>
     </div>
   );
 }
