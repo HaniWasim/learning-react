@@ -2,17 +2,17 @@ import { useState, useEffect } from "react";
 // import User from "./userComp";
 import UserProps from "./prop";
 // import College from "./college";
-import Students from "./college";
-import Wrap from "./wrapper";
-// import Skills from "./skills";
-import Radiobox from "./skills";
-import Tableloop from "./skills";
-import Clock from "./Clock";
-import ColNames from "./CollegeNmaes";
-import Counter from "./counter2";
-import "./css/style.css";
-import Userprofile from "./Userprofile";
-import styled from "styled-components";
+// import Students from "./college";
+// import Wrap from "./wrapper";
+// // import Skills from "./skills";
+// import Radiobox from "./skills";
+// import Tableloop from "./skills";
+// import Clock from "./Clock";
+// import ColNames from "./CollegeNmaes";
+// import Counter from "./counter2";
+// import "./css/style.css";
+// import Userprofile from "./Userprofile";
+// import styled from "styled-components";
 // import ColStd from "./collegecand";
 
 // import Counter from "./counter";
@@ -822,6 +822,7 @@ import styled from "styled-components";
 // export default App;
 
 import { useRef } from "react";
+import CallFunct from "./passFunct";
 
 // function App(params) {
 //   const InputRef = useRef(null);
@@ -863,62 +864,83 @@ import { useRef } from "react";
 //   );
 // }
 // export default App;
+
+// function App(params) {
+//   function SubmitDom(event) {
+//     event.preventDefault();
+//     const user = document.querySelector("#name").value;
+//     const pass = document.querySelector("#pass").value;
+//     console.log(user, pass);
+//   }
+//   const inputRef = useRef();
+//   const passRef = useRef();
+
+//   function submitRef(event) {
+//     event.preventDefault();
+
+//     const user = inputRef.current.value;
+//     const pass = passRef.current.value;
+//     console.log(user,pass);
+
+//   }
+//   return (
+//     <div>
+//       <h1>Form </h1>
+//       <form action="" onSubmit={SubmitDom}>
+//         <br />
+
+//         <input id="name" type="text" placeholder="enter  password" />
+//         <br />
+//         <br />
+//         <input id="pass" type="password" placeholder="enter User name" />
+//         <br />
+
+//         <button>submit</button>
+//       </form>
+//       <hr />
+
+//       <h1>Form </h1>
+//       <form action="" onSubmit={submitRef}>
+//         <br />
+
+//         <input
+//           id="nameRef"
+//           ref={inputRef}
+//           type="text"
+//           placeholder="enter User password"
+//         />
+//         <br />
+//         <br />
+//         <input
+//           id="passRef"
+//           ref={passRef}
+//           type="password"
+//           placeholder="enter User name"
+//         />
+//         <br />
+
+//         <button>submit</button>
+//       </form>
+//     </div>
+//   );
+// }
+// export default App;
+
 function App(params) {
-  function SubmitDom(event) {
-    event.preventDefault();
-    const user = document.querySelector("#name").value;
-    const pass = document.querySelector("#pass").value;
-    console.log(user, pass);
-  }
-  const inputRef = useRef();
-  const passRef = useRef();
+  const Display = (name) => {
+    alert(name);
+  };
+  const GetUSer=()=>{
+    alert('get user funct called');
 
-  function submitRef(event) {
-    event.preventDefault();
-
-    const user = inputRef.current.value;
-    const pass = passRef.current.value;
-    console.log(user,pass);
-    
   }
   return (
     <div>
-      <h1>Form </h1>
-      <form action="" onSubmit={SubmitDom}>
-        <br />
-
-        <input id="name" type="text" placeholder="enter  password" />
-        <br />
-        <br />
-        <input id="pass" type="password" placeholder="enter User name" />
-        <br />
-
-        <button>submit</button>
-      </form>
-      <hr />
-
-      <h1>Form </h1>
-      <form action="" onSubmit={submitRef}>
-        <br />
-
-        <input
-          id="nameRef"
-          ref={inputRef}
-          type="text"
-          placeholder="enter  password"
-        />
-        <br />
-        <br />
-        <input
-          id="passRef"
-          ref={passRef}
-          type="password"
-          placeholder="enter User name"
-        />
-        <br />
-
-        <button>submit</button>
-      </form>
+      <h1>Call parent component function through child component</h1>
+      <CallFunct  Display={Display}name='HANI' GetUSer={GetUSer}/>
+      <CallFunct  Display={Display}name='khan' GetUSer={GetUSer}/>
+      <CallFunct  Display={Display}name='Bruce' GetUSer={GetUSer}/>
+      <CallFunct  Display={Display}name='Billi' GetUSer={GetUSer}/>
     </div>
   );
 }
