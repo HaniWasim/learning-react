@@ -822,7 +822,8 @@ import UserProps from "./prop";
 // export default App;
 
 import { useRef } from "react";
-import CallFunct from "./passFunct";
+// import CallFunct from "./passFunct";
+import ForwardRef from "./forwardRef";
 
 // function App(params) {
 //   const InputRef = useRef(null);
@@ -926,22 +927,52 @@ import CallFunct from "./passFunct";
 // }
 // export default App;
 
-function App(params) {
-  const Display = (name) => {
-    alert(name);
-  };
-  const GetUSer=()=>{
-    alert('get user funct called');
+// function App(params) {
+//   const Display = (name) => {
+//     alert(name);
+//   };
+//   const GetUSer=()=>{
+//     alert('get user funct called');
 
-  }
-  return (
-    <div>
-      <h1>Call parent component function through child component</h1>
-      <CallFunct  Display={Display}name='HANI' GetUSer={GetUSer}/>
-      <CallFunct  Display={Display}name='khan' GetUSer={GetUSer}/>
-      <CallFunct  Display={Display}name='Bruce' GetUSer={GetUSer}/>
-      <CallFunct  Display={Display}name='Billi' GetUSer={GetUSer}/>
-    </div>
-  );
+//   }
+//   return (
+//     <div>
+//       <h1>Call parent component function through child component</h1>
+//       <CallFunct  Display={Display}name='HANI' GetUSer={GetUSer}/>
+//       <CallFunct  Display={Display}name='khan' GetUSer={GetUSer}/>
+//       <CallFunct  Display={Display}name='Bruce' GetUSer={GetUSer}/>
+//       <CallFunct  Display={Display}name='Billi' GetUSer={GetUSer}/>
+//     </div>
+//   );
+// }
+// export default App;
+
+
+
+
+// function App(params) {
+//   const inputReef = useRef();
+//   const handleReef = () => {
+//     inputReef.current.value = "ShutUp";
+//     inputReef.current.style.color = "red";
+//   };
+//   return (
+//     <div>
+//       {/* <input ref={inputReef} type="text" placeholder="enter anything :)" /> */}
+//       <ForwardRef ref={inputReef} /> 
+//       <button onClick={handleReef}>Magic </button>
+//     </div>
+//   );
+// }
+// export default App;
+
+
+
+
+function App(params) {
+ 
+  return(
+    <h3>use form status hook</h3>
+  )
 }
-export default App;
+export default App
