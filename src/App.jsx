@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useTransition } from "react";
 // import User from "./userComp";
 import UserProps from "./prop";
 // import College from "./college";
@@ -823,7 +823,7 @@ import UserProps from "./prop";
 
 import { useRef } from "react";
 // import CallFunct from "./passFunct";
-import ForwardRef from "./forwardRef";
+// import ForwardRef from "./forwardRef";
 
 // function App(params) {
 //   const InputRef = useRef(null);
@@ -947,9 +947,6 @@ import ForwardRef from "./forwardRef";
 // }
 // export default App;
 
-
-
-
 // function App(params) {
 //   const inputReef = useRef();
 //   const handleReef = () => {
@@ -959,20 +956,80 @@ import ForwardRef from "./forwardRef";
 //   return (
 //     <div>
 //       {/* <input ref={inputReef} type="text" placeholder="enter anything :)" /> */}
-//       <ForwardRef ref={inputReef} /> 
+//       <ForwardRef ref={inputReef} />
 //       <button onClick={handleReef}>Magic </button>
 //     </div>
 //   );
 // }
 // export default App;
 
+// import { useFormStatus } from "react-dom";
 
+// function App(params) {
+//   const handleForm = async () => {
+//     await new Promise((res) => setTimeout(res, 1000));
+//     console.log("submit");
+//   };
 
+//   function ComponentForm(params) {
+//     const { pending } = useFormStatus();
+//     console.log(pending);
 
+//     return (
+//       <div>
+//         <form action={handleForm}>
+//           <input
+//             type="text"
+//             placeholder="name"
+//             style={{ display: "block", marginBottom: "10px" }}
+//           />
+//           <input
+//             style={{ display: "block", marginBottom: "10px" }}
+//             type="text"
+//             placeholder="Password"
+//           />
+//           <button
+//             disabled={pending}
+//             style={{ display: "block", marginBottom: "10px" }}
+//           >
+//             {pending ? "submitting...." : "submit"}
+//           </button>
+//         </form>
+//       </div>
+//     );
+//   }
+//   return (
+//     <div>
+//       <h2>use form status hook</h2>
+//       <ComponentForm />
+//     </div>
+//   );
+// }
+// export default App;
+// import { useTransition } from "react";
 function App(params) {
- 
-  return(
-    <h3>use form status hook</h3>
-  )
+  const [pending, startTransition] = useTransition();
+
+  const HandleButton = () => {
+    startTransition(async () => {
+      await new Promise((res) => setTimeout(res, 2000));
+    });
+  };
+
+  return (
+    <div>
+      <h1>use transition hook</h1>
+      {pending ? (
+        <img
+          style={{ width: "200px" }}
+          src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExY2pja2d0MHRpODVpcHNqYWhkMHZua3d5ZjJlNXRjazhpZGRlb2dxcyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/KG4PMQ0jyimywxNt8i/giphy.gif"
+          alt=""
+        />
+      ) : null}
+      <button disabled={pending} onClick={HandleButton}>
+        Click Here
+      </button>
+    </div>
+  );
 }
-export default App
+export default App;
