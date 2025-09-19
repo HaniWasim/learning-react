@@ -1007,28 +1007,60 @@ import { useRef } from "react";
 // }
 // export default App;
 // import { useTransition } from "react";
+
+// function App(params) {
+//   const [pending, startTransition] = useTransition();
+
+//   const HandleButton = () => {
+//     startTransition(async () => {
+//       await new Promise((res) => setTimeout(res, 2000));
+//     });
+//   };
+
+//   return (
+//     <div>
+//       <h1>use transition hook</h1>
+//       {pending ? (
+//         <img
+//           style={{ width: "200px" }}
+//           src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExY2pja2d0MHRpODVpcHNqYWhkMHZua3d5ZjJlNXRjazhpZGRlb2dxcyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/KG4PMQ0jyimywxNt8i/giphy.gif"
+//           alt=""
+//         />
+//       ) : null}
+//       <button disabled={pending} onClick={HandleButton}>
+//         Click Here
+//       </button>
+//     </div>
+//   );
+// }
+// export default App;
+
 function App(params) {
-  const [pending, startTransition] = useTransition();
+  const [Users, setUsers] = useState([]);
+  const [User, setUser] = useState("");
+  const total = Users.length;
+  const last = Users[Users.length - 1];
+  const unique = [...new Set(Users)].length;
 
-  const HandleButton = () => {
-    startTransition(async () => {
-      await new Promise((res) => setTimeout(res, 2000));
-    });
-  };
-
+  function handleFuct(params) {
+    setUsers([...Users, User]);
+    // console.log(Users);
+  }
   return (
     <div>
-      <h1>use transition hook</h1>
-      {pending ? (
-        <img
-          style={{ width: "200px" }}
-          src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExY2pja2d0MHRpODVpcHNqYWhkMHZua3d5ZjJlNXRjazhpZGRlb2dxcyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/KG4PMQ0jyimywxNt8i/giphy.gif"
-          alt=""
-        />
-      ) : null}
-      <button disabled={pending} onClick={HandleButton}>
-        Click Here
-      </button>
+      <h2>Total users :{total}</h2>
+      <h2>last Users :{last}</h2>
+      <h2>Unique users :{unique}</h2>
+
+      <input
+        onChange={(e) => setUser(e.target.value)}
+        type="text"
+        placeholder="enter user name"
+      />
+      <button onClick={handleFuct}>Submit</button>
+      {Users.map((item, index) => (
+        <h2 key={index}>{item}</h2>
+      ))}
     </div>
   );
 }
