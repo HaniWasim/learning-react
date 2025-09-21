@@ -822,6 +822,8 @@ import UserProps from "./prop";
 // export default App;
 
 import { useRef } from "react";
+import AddUser from "./AddUser";
+import DisplayUser from "./DisplayUser";
 // import CallFunct from "./passFunct";
 // import ForwardRef from "./forwardRef";
 
@@ -1035,33 +1037,48 @@ import { useRef } from "react";
 // }
 // export default App;
 
+// function App(params) {
+//   const [Users, setUsers] = useState([]);
+//   const [User, setUser] = useState("");
+//   const total = Users.length;
+//   const last = Users[Users.length - 1];
+//   const unique = [...new Set(Users)].length;
+
+//   function handleFuct(params) {
+//     setUsers([...Users, User]);
+//     // console.log(Users);
+//   }
+//   return (
+//     <div>
+//       <h2>Total users :{total}</h2>
+//       <h2>last Users :{last}</h2>
+//       <h2>Unique users :{unique}</h2>
+
+//       <input
+//         onChange={(e) => setUser(e.target.value)}
+//         type="text"
+//         placeholder="enter user name"
+//       />
+//       <button onClick={handleFuct}>Submit</button>
+//       {Users.map((item, index) => (
+//         <h2 key={index}>{item}</h2>
+//       ))}
+//     </div>
+//   );
+// }
+// export default App;
+
+// import { useState } from "react";
+
 function App(params) {
-  const [Users, setUsers] = useState([]);
-  const [User, setUser] = useState("");
-  const total = Users.length;
-  const last = Users[Users.length - 1];
-  const unique = [...new Set(Users)].length;
+  const [Adduser, setAdduser] = useState()
+return(
+<div>
 
-  function handleFuct(params) {
-    setUsers([...Users, User]);
-    // console.log(Users);
-  }
-  return (
-    <div>
-      <h2>Total users :{total}</h2>
-      <h2>last Users :{last}</h2>
-      <h2>Unique users :{unique}</h2>
 
-      <input
-        onChange={(e) => setUser(e.target.value)}
-        type="text"
-        placeholder="enter user name"
-      />
-      <button onClick={handleFuct}>Submit</button>
-      {Users.map((item, index) => (
-        <h2 key={index}>{item}</h2>
-      ))}
-    </div>
-  );
+<AddUser Adduser={Adduser} setAdduser={setAdduser}/>
+<DisplayUser Adduser={Adduser}/>
+</div>
+)
 }
-export default App;
+export default App
