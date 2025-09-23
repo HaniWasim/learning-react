@@ -824,6 +824,7 @@ import UserProps from "./prop";
 import { useRef } from "react";
 import AddUser from "./AddUser";
 import DisplayUser from "./DisplayUser";
+import { useActionState } from "react";
 // import CallFunct from "./passFunct";
 // import ForwardRef from "./forwardRef";
 
@@ -1121,51 +1122,84 @@ import DisplayUser from "./DisplayUser";
 // }
 // export default App;
 
-function App(params) {
-  const [User, setUser] = useState(["anil", "sidhu", "khan", "danny"]);
-  const [DetailsUser, setDetailsUser] = useState([
-    { name: "anil", age: "23" },
-    { name: "anil", age: "34" },
-    { name: "Peter", age: "45" },
-  ]);
-  const handleDetailuser = (ages) => {
-    DetailsUser[DetailsUser.length - 1].age = ages;
-    console.log(DetailsUser);
+// function App(params) {
+//   const [User, setUser] = useState(["anil", "sidhu", "khan", "danny"]);
+//   const [DetailsUser, setDetailsUser] = useState([
+//     { name: "anil", age: "23" },
+//     { name: "anil", age: "34" },
+//     { name: "Peter", age: "45" },
+//   ]);
+//   const handleDetailuser = (ages) => {
+//     DetailsUser[DetailsUser.length - 1].age = ages;
+//     console.log(DetailsUser);
 
-    setDetailsUser([...DetailsUser]);
+//     setDetailsUser([...DetailsUser]);
+//   };
+//   const Handleuser = (name) => {
+//     User[User.length - 1] = name;
+//     console.log(User);
+//     setUser([...User]);
+//   };
+//   return (
+//     <div>
+//       <h1>update array in state</h1>
+//       <input
+//         onChange={(e) => {
+//           Handleuser(e.target.value);
+//         }}
+//         type="text"
+//         placeholder="user name"
+//       />
+//       {User.map((item, index) => (
+//         <h2 key={index}>{item}</h2>
+//       ))}
+//       <hr />
+//       <input
+//         type="text"
+//         onChange={(e) => {
+//           handleDetailuser(e.target.value);
+//         }}
+//         placeholder="user Age"
+//       />
+//       {DetailsUser.map((item, index) => (
+//         <h2 key={index}>
+//           {item.age},{item.name}
+//         </h2>
+//       ))}
+//     </div>
+//   );
+// }
+// export default App;
+
+export default function App(params) {
+  const Handlesubmit = async (previousdata, formdata) => {
+    let name = formdata.get("name");
+    let password = formdata.get("password");
+    await new Promise((res) => setTimeout(res, 2000));
+    // console.log("handlesubmit called", name, password);
+    if (name && password) {
+      return { message: "data submitted",name,password };
+    } else {
+      return { Error: "submit prorperly",name,password };
+    }
   };
-  const Handleuser = (name) => {
-    User[User.length - 1] = name;
-    console.log(User);
-    setUser([...User]);
-  };
+  const [data, action, pending] = useActionState(Handlesubmit, undefined);
+  console.log(data);
   return (
     <div>
-      <h1>update array in state</h1>
-      <input
-        onChange={(e) => {
-          Handleuser(e.target.value);
-        }}
-        type="text"
-        placeholder="user name"
-      />
-      {User.map((item, index) => (
-        <h2 key={index}>{item}</h2>
-      ))}
-      <hr />
-      <input
-        type="text"
-        onChange={(e) => {
-          handleDetailuser(e.target.value);
-        }}
-        placeholder="user Age"
-      />
-      {DetailsUser.map((item, index) => (
-        <h2 key={index}>
-          {item.age},{item.name}
-        </h2>
-      ))}
+      <h1>use action state hook</h1>
+
+      <form action={action}>
+        <input defaultValue={data?.name} type="text" placeholder="name" name="name" />
+        <input defaultValue={data?.password} type="password" placeholder="Password" name="password" />
+        <button disabled={pending}>submit form</button>
+      </form>
+      <br />
+      {data?.Error && <span style={{ color: "red" }}>{data?.Error}</span>}
+      {data?.message && <span style={{ color: "green" }}>{data?.message}</span>}
+      <h3>name :{data?.name}</h3>
+      <h3>password :{data?.password}</h3>
+
     </div>
   );
 }
-export default App;
