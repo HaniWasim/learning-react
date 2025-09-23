@@ -1070,15 +1070,102 @@ import DisplayUser from "./DisplayUser";
 
 // import { useState } from "react";
 
+// function App(params) {
+//   const [Adduser, setAdduser] = useState()
+// return(
+// <div>
+
+// <AddUser Adduser={Adduser} setAdduser={setAdduser}/>
+// <DisplayUser Adduser={Adduser}/>
+// </div>
+// )
+// }
+// export default App
+
+// function App(params) {
+//   const [Data, setData] = useState({
+//     name: "hani",
+//     adress: {
+//       city: "karachi",
+//       country: "Pakistan",
+//     },
+//   });
+//   const handleName = (val) => {
+//     Data.name = val;
+//     // console.log(Data);
+//     setData({ ...Data });
+//   };
+//   const handlecity = (city) => {
+//     console.log(Data);
+//     Data.adress.city = city;
+//     setData({ ...Data, adress: { ...Data.adress,city } });
+//   };
+//   return (
+//     <div>
+//       <h1>Updating obj in state </h1>
+//       <input
+//         type="text"
+//         placeholder="name"
+//         onChange={(e) => handleName(e.target.value)}
+//       />
+//       <input
+//         onChange={(e) => handlecity(e.target.value)}
+//         type="text"
+//         placeholder="City Name"
+//       />
+//       <h2>ur Name : {Data.name} </h2>
+//       <h2>Ur city : {Data.adress.city}</h2>
+//       <h2>Ur Country : {Data.adress.country}</h2>
+//     </div>
+//   );
+// }
+// export default App;
+
 function App(params) {
-  const [Adduser, setAdduser] = useState()
-return(
-<div>
+  const [User, setUser] = useState(["anil", "sidhu", "khan", "danny"]);
+  const [DetailsUser, setDetailsUser] = useState([
+    { name: "anil", age: "23" },
+    { name: "anil", age: "34" },
+    { name: "Peter", age: "45" },
+  ]);
+  const handleDetailuser = (ages) => {
+    DetailsUser[DetailsUser.length - 1].age = ages;
+    console.log(DetailsUser);
 
-
-<AddUser Adduser={Adduser} setAdduser={setAdduser}/>
-<DisplayUser Adduser={Adduser}/>
-</div>
-)
+    setDetailsUser([...DetailsUser]);
+  };
+  const Handleuser = (name) => {
+    User[User.length - 1] = name;
+    console.log(User);
+    setUser([...User]);
+  };
+  return (
+    <div>
+      <h1>update array in state</h1>
+      <input
+        onChange={(e) => {
+          Handleuser(e.target.value);
+        }}
+        type="text"
+        placeholder="user name"
+      />
+      {User.map((item, index) => (
+        <h2 key={index}>{item}</h2>
+      ))}
+      <hr />
+      <input
+        type="text"
+        onChange={(e) => {
+          handleDetailuser(e.target.value);
+        }}
+        placeholder="user Age"
+      />
+      {DetailsUser.map((item, index) => (
+        <h2 key={index}>
+          {item.age},{item.name}
+        </h2>
+      ))}
+    </div>
+  );
 }
-export default App
+export default App;
