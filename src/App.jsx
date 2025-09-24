@@ -1,4 +1,4 @@
-import { useState, useEffect, useTransition, useId } from "react";
+import { useState, useEffect, useTransition, useId, Fragment } from "react";
 // import User from "./userComp";
 import UserProps from "./prop";
 // import College from "./college";
@@ -1204,43 +1204,67 @@ import { useActionState } from "react";
 //   );
 // }
 
-export default function App(params) {
-  const name = useId();
-  // const password = useId();
-  // const skills = useId();
+// export default function App(params) {
+//   const name = useId();
+//   const password = useId();
+//   const skills = useId();
 
+//   return (
+//     <div>
+//       <h1>use id hook </h1>
+//       <form action="">
+//         <label htmlFor={name}>name</label>
+//         <input id={name} type="text" placeholder="name" />
+//         <br />
+//         <br />
+
+//         <label htmlFor={password}>password</label>
+//         <input id={password} type="text" placeholder="password"/>
+//         <br />
+//         <br />
+//         <label htmlFor={skills}>skills</label>
+//         <input id={skills} type="text" placeholder="skills"/>
+//       </form>
+//     </div>
+//     // <div>
+//     //   <h1>use id hook </h1>
+//     //   <form action="">
+//     //     <label htmlFor={name+'name'}>name</label>
+//     //     <input id={name+'name'} type="text" placeholder="name" />
+//     //     <br />
+//     //     <br />
+
+//     //     <label htmlFor={name+'password'}>password</label>
+//     //     <input id={name+'password'} type="text" placeholder="password"/>
+//     //     <br />
+//     //     <br />
+//     //     <label htmlFor={name+'skills'}>skills</label>
+//     //     <input id={"skills"} type="text" placeholder="skills"/>
+//     //   </form>
+//     // </div>
+//   );
+// }
+
+export default function App(params) {
   return (
-    // <div>
-    //   <h1>use id hook </h1>
-    //   <form action="">
-    //     <label htmlFor={name}>name</label>
-    //     <input id={name} type="text" placeholder="name" />
-    //     <br />
-    //     <br />
-        
-    //     <label htmlFor={password}>password</label>
-    //     <input id={password} type="text" placeholder="password"/>
-    //     <br />
-    //     <br />
-    //     <label htmlFor={skills}>skills</label>
-    //     <input id={skills} type="text" placeholder="skills"/>
-    //   </form>
-    // </div>
-    <div>
-      <h1>use id hook </h1>
-      <form action="">
-        <label htmlFor={name+'name'}>name</label>
-        <input id={name+'name'} type="text" placeholder="name" />
-        <br />
-        <br />
-        
-        <label htmlFor={name+'password'}>password</label>
-        <input id={name+'password'} type="text" placeholder="password"/>
-        <br />
-        <br />
-        <label htmlFor={name+'skills'}>skills</label>
-        <input id={name+"skills"} type="text" placeholder="skills"/>
-      </form>
-    </div>
+    <Fragment>
+      {/* 
+      <h1>fragement in react js</h1>
+      <h1>fragement in react js</h1> */}
+    <User/>
+    <User/>
+    <User/>
+    <User/>
+
+    </Fragment>
+  );
+}
+
+function User(params) {
+  return (
+    <Fragment>
+      <h1>fragement in react js</h1>
+      <h1>fragement in react js</h1>
+    </Fragment>
   );
 }
