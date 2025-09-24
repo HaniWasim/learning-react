@@ -1,4 +1,4 @@
-import { useState, useEffect, useTransition } from "react";
+import { useState, useEffect, useTransition, useId } from "react";
 // import User from "./userComp";
 import UserProps from "./prop";
 // import College from "./college";
@@ -1171,35 +1171,76 @@ import { useActionState } from "react";
 // }
 // export default App;
 
+// export default function App(params) {
+//   const Handlesubmit = async (previousdata, formdata) => {
+//     let name = formdata.get("name");
+//     let password = formdata.get("password");
+//     await new Promise((res) => setTimeout(res, 2000));
+//     // console.log("handlesubmit called", name, password);
+//     if (name && password) {
+//       return { message: "data submitted",name,password };
+//     } else {
+//       return { Error: "submit prorperly",name,password };
+//     }
+//   };
+//   const [data, action, pending] = useActionState(Handlesubmit, undefined);
+//   console.log(data);
+//   return (
+//     <div>
+//       <h1>use action state hook</h1>
+
+//       <form action={action}>
+//         <input defaultValue={data?.name} type="text" placeholder="name" name="name" />
+//         <input defaultValue={data?.password} type="password" placeholder="Password" name="password" />
+//         <button disabled={pending}>submit form</button>
+//       </form>
+//       <br />
+//       {data?.Error && <span style={{ color: "red" }}>{data?.Error}</span>}
+//       {data?.message && <span style={{ color: "green" }}>{data?.message}</span>}
+//       <h3>name :{data?.name}</h3>
+//       <h3>password :{data?.password}</h3>
+
+//     </div>
+//   );
+// }
+
 export default function App(params) {
-  const Handlesubmit = async (previousdata, formdata) => {
-    let name = formdata.get("name");
-    let password = formdata.get("password");
-    await new Promise((res) => setTimeout(res, 2000));
-    // console.log("handlesubmit called", name, password);
-    if (name && password) {
-      return { message: "data submitted",name,password };
-    } else {
-      return { Error: "submit prorperly",name,password };
-    }
-  };
-  const [data, action, pending] = useActionState(Handlesubmit, undefined);
-  console.log(data);
+  const name = useId();
+  // const password = useId();
+  // const skills = useId();
+
   return (
+    // <div>
+    //   <h1>use id hook </h1>
+    //   <form action="">
+    //     <label htmlFor={name}>name</label>
+    //     <input id={name} type="text" placeholder="name" />
+    //     <br />
+    //     <br />
+        
+    //     <label htmlFor={password}>password</label>
+    //     <input id={password} type="text" placeholder="password"/>
+    //     <br />
+    //     <br />
+    //     <label htmlFor={skills}>skills</label>
+    //     <input id={skills} type="text" placeholder="skills"/>
+    //   </form>
+    // </div>
     <div>
-      <h1>use action state hook</h1>
-
-      <form action={action}>
-        <input defaultValue={data?.name} type="text" placeholder="name" name="name" />
-        <input defaultValue={data?.password} type="password" placeholder="Password" name="password" />
-        <button disabled={pending}>submit form</button>
+      <h1>use id hook </h1>
+      <form action="">
+        <label htmlFor={name+'name'}>name</label>
+        <input id={name+'name'} type="text" placeholder="name" />
+        <br />
+        <br />
+        
+        <label htmlFor={name+'password'}>password</label>
+        <input id={name+'password'} type="text" placeholder="password"/>
+        <br />
+        <br />
+        <label htmlFor={name+'skills'}>skills</label>
+        <input id={name+"skills"} type="text" placeholder="skills"/>
       </form>
-      <br />
-      {data?.Error && <span style={{ color: "red" }}>{data?.Error}</span>}
-      {data?.message && <span style={{ color: "green" }}>{data?.message}</span>}
-      <h3>name :{data?.name}</h3>
-      <h3>password :{data?.password}</h3>
-
     </div>
   );
 }
